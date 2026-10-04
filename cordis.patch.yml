@@ -1,0 +1,22 @@
+# dsh-wonder-tools —— **装配包**：本 patch 声明 5 行，每行对应一个独立功能包。
+#
+# 为什么这样：面板「包含的组件」列的是**本 bundle patch 声明的 loader 行** ⇒
+#   1 张卡 + 5 行，每行在面板里有独立开关。
+# 那 5 个包必须装在 profile 的 node_modules 里（作为依赖），但**不能**写进
+#   `dsh.profile.bundles` —— 否则它们各成一张卡，就不是"1 卡 + 5 行"了。
+#   （`dsh plugin add` 会自动把带 dsh.bundle.patch 的依赖塞进 bundles，装完要摘掉。）
+#
+# ⚠️ 每行的包名必须与该包 client bundle 里 `window.__ModuleLoader__.load({id:...})` 的 id
+#    **完全一致**（2026-10-04 两次启动崩溃的根因）。离线预检：
+#    work\merge-plugins-20261004\a2-staging\verify-a2-composition.mjs
+- insert:
+    - id: session-delete
+      name: "@apherchin/dsh-session-delete"
+    - id: session-rewind
+      name: "@apherchin/dsh-session-rewind"
+    - id: team-commands
+      name: "dsh-sidefork-a-teammate"
+    - id: attention
+      name: "dsh-windows-session-notification"
+    - id: session-title-first-turn
+      name: "dsh-rename-title-after-first-turn"
