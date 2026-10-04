@@ -1,7 +1,7 @@
 {
   "name": "dsh-wonder-tools",
   "version": "0.2.0",
-  "description": "DSH 工具箱（装配包）：一个插件装好五个功能 —— 删除对话 / 重新生成（从这里重来）/ 队友命令（/teammate）/ 跨会话提醒 / 首轮结束自动命名。",
+  "description": "DSH 工具箱（装配包）：一个插件装好五个功能 —— 删除对话 / 重新生成（从这里重来）/ 队友命令（/teammate）/ 跨会话提醒 / 首轮结束自动命名；插件页呈现为 1 张卡 + 5 行组件，每行独立开关。 | DSH toolbox (assembly bundle): one card, five independently switchable features — delete conversation, rewind from here, teammate commands, cross-session attention, auto-title after the first turn. Renders as one card with five toggleable rows on the Plugins page.",
   "icon": "./icon.svg",
   "type": "module",
   "main": "index.mjs",
@@ -17,7 +17,8 @@
     "icon.svg",
     "locale/*.json",
     "README.md",
-    "LICENSE"
+    "LICENSE",
+    "README.zh.md"
   ],
   "dsh": {
     "bundle": {
@@ -29,7 +30,22 @@
     "deepseek-harness",
     "cordis",
     "dsh-plugin",
-    "toolbox"
+    "plugin",
+    "plugins",
+    "toolbox",
+    "tools",
+    "suite",
+    "bundle",
+    "assembly",
+    "session",
+    "delete",
+    "rewind",
+    "teammate",
+    "notification",
+    "session-title",
+    "windows",
+    "工具箱",
+    "插件"
   ],
   "repository": {
     "type": "git",
@@ -51,6 +67,6 @@
     "@apherchin/dsh-session-rewind": "0.1.1",
     "dsh-sidefork-a-teammate": "0.2.1",
     "dsh-windows-session-notification": "0.1.3",
-    "dsh-rename-title-after-first-turn": "0.1.0"
+    "dsh-rename-title-after-first-turn": "0.1.1"
   }
 }
